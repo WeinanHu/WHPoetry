@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ozd-4a-9rt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--诗词鉴赏-->
+        <scene sceneID="Xqn-jg-blj">
+            <objects>
+                <collectionViewController id="s8Y-v6-ePU" customClass="WNMainCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xq7-C5-gbr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.99052848648540648" blue="0.96506381120137008" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6MU-Bm-QoT">
+                            <size key="itemSize" width="130" height="65"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="RNR-qN-Equ" customClass="WNCollectionViewCell">
+                                <rect key="frame" x="20" y="64" width="130" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="五言乐府" translatesAutoresizingMaskIntoConstraints="NO" id="Be6-lK-DLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="65"/>
+                                            <animations/>
+                                        </imageView>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGX-vm-o3O">
+                                            <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="37" id="2eX-Vc-UBa"/>
+                                                <constraint firstAttribute="height" constant="37" id="fD7-xx-wqQ"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="deleat"/>
+                                            <connections>
+                                                <action selector="clickDeleteButton:" destination="RNR-qN-Equ" eventType="touchUpInside" id="5lc-8s-jKF"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Be6-lK-DLr" secondAttribute="bottom" id="0Es-ir-n0h"/>
+                                    <constraint firstItem="NGX-vm-o3O" firstAttribute="top" secondItem="RNR-qN-Equ" secondAttribute="top" id="32u-Aa-AyR"/>
+                                    <constraint firstItem="Be6-lK-DLr" firstAttribute="leading" secondItem="RNR-qN-Equ" secondAttribute="leading" id="37f-c8-FYJ"/>
+                                    <constraint firstItem="NGX-vm-o3O" firstAttribute="leading" secondItem="RNR-qN-Equ" secondAttribute="leading" id="F1z-vi-oNP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Be6-lK-DLr" secondAttribute="trailing" id="SiR-DT-HKT"/>
+                                    <constraint firstItem="Be6-lK-DLr" firstAttribute="top" secondItem="RNR-qN-Equ" secondAttribute="top" id="T5A-Zx-xRU"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="backgroundImageView" destination="Be6-lK-DLr" id="6fr-Yu-keP"/>
+                                    <outlet property="deleteButton" destination="NGX-vm-o3O" id="QSn-BX-I8W"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="s8Y-v6-ePU" id="hXm-YL-0Qf"/>
+                            <outlet property="delegate" destination="s8Y-v6-ePU" id="qzS-z0-JKd"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="诗词鉴赏" id="hNT-RQ-fGE"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P6K-WE-agd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="369"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CSO-lf-oEK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ozd-4a-9rt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rfI-FW-N0z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s8Y-v6-ePU" kind="relationship" relationship="rootViewController" id="8iO-Q2-e6q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSp-dX-JtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="354"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="deleat" width="17" height="17"/>
+        <image name="五言乐府" width="170" height="81"/>
+    </resources>
+</document>
